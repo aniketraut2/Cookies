@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <button class="open-btn">Show popup</button>
+    </div>
+    <div class="cookies-overlay"></div>
+    <div class="cookies-box">
+        <span class="close-btn">&times;</span>
+        <img src="cookies.png" alt="cookies">
+        <h3>Cookies and Privacy</h3>
+        <p>This website uses cookies to ensure you get the best experience on our website.</p>
+        <a href="#" class="accept">Accept All Cookies</a>
+        <a href="#" class="setting">Customize Settings</a>
+    </div>
+    <script>
+        const openBtn = document.querySelector('.open-btn');
+        const closeBtn = document.querySelector('.close-btn');
+        const cookiesBox = document.querySelector('.cookies-box');
+        const overlay = document.querySelector('.cookies-overlay');
+
+        openBtn.onclick = () => {
+            cookiesBox.classList.add('active');
+            overlay.style.display = 'block';
+        };
+
+        closeBtn.onclick = () => {
+            cookiesBox.classList.remove('active');
+            overlay.style.display = 'none';
+        };
+
+        overlay.onclick = () => {
+            cookiesBox.classList.remove('active');
+            overlay.style.display = 'none';
+        };
+    </script>
+</body>
+</html>
